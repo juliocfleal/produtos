@@ -50,7 +50,7 @@ Class Produto{
 
         
         
-        echo "<pre>"; print_r($obDatabase); echo "</pre>"; exit;
+       
     }
 
 
@@ -65,6 +65,28 @@ Class Produto{
             ->fetchAll(PDO::FETCH_CLASS,self::class);
 
 
+    }
+
+
+     /**
+     * @param integer $id
+     * @return produto
+     */
+    public static function getProduto($id){
+        return (new Database('produtos'))->select('id = '.$id)
+        ->fetchObject(self::class);
+    }
+
+    /**
+     * @return boolean
+     */
+    public function update(){
+        return (new Database('produtos'))->update('id = '.$this->id,[
+            'nome' =>$this->nome,
+            'descricao' =>$this->descricao,
+            'quantidade' =>$this->quantidade
+
+        ]);
     }
 
 }

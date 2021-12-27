@@ -6,7 +6,10 @@ foreach($produtos as $produto){
     <td>'.$produto->nome.'</td>
     <td>'.$produto->descricao.'</td>
     <td>'.$produto->quantidade.'</td>
-    <td></td>
+    <td>
+    <a href="edit.php?id='.$produto->id.'">
+    <button type="button" class="btn btn-primary">EDITAR</button></a><a href="delete.php?id='.$produto->id.'"><button type="button" class="btn btn-danger">DELETAR</button></a>
+    </td>
     <tr>';
 }
 ?>

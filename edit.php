@@ -2,18 +2,28 @@
 
 require __DIR__.'/vendor/autoload.php';
 
-define('TITLE', 'Cadastrar Produto');
+define('TITLE', 'Editar Produto');
 
 use \App\Entity\produto;
 
-$obproduto = new produto;
+if(!isset($_GET['id']) or !is_numeric($_GET['id'])){
+    header('location: index.php?error');
+    exit;
+}
+
+$obproduto = produto::getProduto($_GET['id']);
+if(!$obproduto instanceof produto){
+    header('location: index.php?error');
+    exit;   
+}
 
 //VALIDATION
 if(isset($_POST['nome'],$_POST['descricao'],$_POST['quantidade'])){
+
     $obproduto->nome = $_POST['nome'];
     $obproduto->descricao = $_POST['descricao'];
     $obproduto->quantidade = $_POST['quantidade'];
-    $obproduto->register();
+    $obproduto->update();
     
     header('location: index.php?status=success');
     exit;
