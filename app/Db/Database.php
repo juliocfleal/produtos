@@ -91,9 +91,26 @@ public function insert($values){
     $this->execute($query,array_values($values));
 
     return $this->connection->lastInsertId();
-    echo "<pre>"; print_r($query); echo "</pre>"; exit;
 
 
+
+}
+
+    /**
+     * @param string $where
+     * @param string $order
+     * @param string $limit
+     * @param string $fields
+     * @return PDOStatement
+     */
+public function select($where = null , $order = null, $limit = null, $fields = '*'){
+
+    $where = strlen($where) ? 'WHERE '.$where : '';
+    $order = strlen($order) ? 'WHERE '.$order : '';
+    $limit = strlen($limit) ? 'WHERE '.$limit : '';
+
+    $query = 'SELECT '.$fields.' FROM '.$this->table.' '.$where.' '.$order.' '.$limit;
+    return $this->execute($query);
 }
 }
 

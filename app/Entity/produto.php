@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Db\Database;
+use \PDO;
 
 Class Produto{
 
@@ -50,6 +51,20 @@ Class Produto{
         
         
         echo "<pre>"; print_r($obDatabase); echo "</pre>"; exit;
+    }
+
+
+    /**
+     * @param string $where
+     * @param string $order
+     * @param string $limit
+     * @return array
+     */
+    public static function getProdutos($where = null , $order = null, $limit = null){
+            return (new Database('produtos'))->select($where,$order,$limit)
+            ->fetchAll(PDO::FETCH_CLASS,self::class);
+
+
     }
 
 }
