@@ -20,7 +20,7 @@
 <label>Quantidade</label>
 <input type="number" class="form-control" name="quantidade" value="<?=$obproduto->quantidade?>">
 <div class="form-group mt-3">
-    <button type="submit" class="btn btn-success">Cadastrar</button>
+    <button type="submit" class="btn btn-success"><?=BTT?></button>
 
 </div>
 

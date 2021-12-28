@@ -89,4 +89,11 @@ Class Produto{
         ]);
     }
 
+/**
+ * @return boolean
+ */
+    public function excluir(){
+        return (new Database('produtos'))->delete( 'id = '.$this->id);
+    }
+
 }

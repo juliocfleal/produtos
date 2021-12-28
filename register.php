@@ -3,6 +3,7 @@
 require __DIR__.'/vendor/autoload.php';
 
 define('TITLE', 'Cadastrar Produto');
+define('BTT', 'Cadastrar');
 
 use \App\Entity\produto;
 

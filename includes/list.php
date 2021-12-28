@@ -1,4 +1,18 @@
 <?php
+
+$mensagem ='';
+
+if(isset($_GET['status'])){
+  switch($_GET['status']){
+    case 'success':
+      $mensagem = '<div class="alert alert-success">Realizado com Sucesso!</div>';
+      break;
+      case 'error':
+        $mensagem = '<div class="alert alert-danger">Não executada!</div>';
+        break;
+  }
+}
+
 $resultados = '';
 foreach($produtos as $produto){
     $resultados .= '<tr>
@@ -14,7 +28,7 @@ foreach($produtos as $produto){
 }
 ?>
 <main>
-
+ <?=$mensagem?>
 <section>
     <a href="register.php">
         <button class="btn btn-success">Novo Produto</button>

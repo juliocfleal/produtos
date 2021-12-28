@@ -125,6 +125,16 @@ public function update($where,$values){
     $this->execute($query, array_values($values));
     return true;
 }
+
+/**
+ * @param string $where
+ * @return boolean
+ */
+public function delete($where){
+    $query = 'DELETE FROM '.$this->table.' WHERE '.$where;
+    $this->execute($query);
+    return true;
+}
 }
 
 

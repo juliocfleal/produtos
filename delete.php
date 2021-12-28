@@ -2,9 +2,6 @@
 
 require __DIR__.'/vendor/autoload.php';
 
-define('TITLE', 'Editar Produto');
-define('BTT', 'Atualizar');
-
 use \App\Entity\produto;
 
 if(!isset($_GET['id']) or !is_numeric($_GET['id'])){
@@ -19,18 +16,13 @@ if(!$obproduto instanceof produto){
 }
 
 //VALIDATION
-if(isset($_POST['nome'],$_POST['descricao'],$_POST['quantidade'])){
-
-    $obproduto->nome = $_POST['nome'];
-    $obproduto->descricao = $_POST['descricao'];
-    $obproduto->quantidade = $_POST['quantidade'];
-    $obproduto->update();
-    
+if(isset($_POST['delete'])){
+$obproduto->excluir();  
     header('location: index.php?status=success');
     exit;
 
 }
 
 include __DIR__.'/includes/header.php';
-include __DIR__.'/includes/form.php';
+include __DIR__.'/includes/confirm.php';
 include __DIR__.'/includes/footer.php';
