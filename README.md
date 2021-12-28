@@ -1,6 +1,7 @@
 # Produtos Julio Leal
-Aplicacao que realiza as opereacoes de cadastro, edicao, delecao e visualizacao (CRUD) de produtos, desenvolvida utilizando a linguagem PHP orientado a objetos armazenando os dados em MySQL.
-Apos cada operacao realizada e exibido na tela inicial uma mensagem personalizada e amigavel de sucesso ou de erro ao usuario.
+Aplicação que realiza as opereaçoes de cadastro, edição, deleção e visualização (CRUD) de produtos, desenvolvida utilizando a linguagem PHP orientado a objetos armazenando os dados em MySQL.
+Apos cada operação realizada e exibido na tela inicial uma mensagem personalizada e amigável de sucesso ou de erro ao usuário.
+Uso de boas práticas e reaproveitamento de código aplicando querys dinâmicas e comentários.
 
 ![Image](https://raw.githubusercontent.com/juliocfleal/produtos/main/imgs/tela%20inicial.png)
 
@@ -15,13 +16,12 @@ Apos cada operacao realizada e exibido na tela inicial uma mensagem personalizad
 ## Banco de Dados
 - MySQL(MariaDB)
 
-![Image](https://github.com/juliocfleal/pessoaconexo/blob/master/frontend/web/src/assets/tela-lista.png?raw=true)
+![Image](https://raw.githubusercontent.com/juliocfleal/produtos/main/imgs/tela%20lista.png)
 
 ## Observacoes
-- Arquivo .sql (produtos.sql) disponivel no projeto.
-- Configuracao realizada para host 'localhost' usuario 'root' com senha 'root', podendo ser alterado no arquivo Database.php .
-- Utilizacao de etilos incluindo botoes, formularios e caixas de alerta usando BootsTrap.
-
+- Arquivo .sql (produtos.sql) disponível no projeto.
+- Configuração realizada para host 'localhost' usuário 'root' com senha 'root', podendo ser alterado no arquivo Database.php .
+- Utilização de etilos incluindo botoes, formulários e caixas de alerta usando BootsTrap.
 
 ## Ambiente de Desenvolvimento
 - Windows 10 Enterprise x64 20H2
